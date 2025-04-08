@@ -6,7 +6,7 @@ public class Automobile {
     public Automobile(String name, int speed) {
         this.name = name;
         this.speed = speed;
-        this.distance = speed * Race.Duration;
+        this.distance = speed * Race.GetDuration();
     }
 
     public String getName() {
