@@ -1,22 +1,17 @@
 public class Race {
-    private static Automobile winner;
-    private final static int duration = 24;
+    private Automobile winner;
+    public final static int DURATION = 24;
 
-    public static int GetDuration()
-    {
-        return duration;
-    }
-
-    public static void CheckWinner(Automobile automobile) {
-        if (winner == null || automobile.getDistance() > winner.getDistance()) {
+    public void checkWinner(Automobile automobile) {
+        if (winner == null || automobile.distance > winner.distance) {
             winner = automobile;
         }
     }
 
-    public static String GetWinnerName() {
+    public String getWinnerName() {
         String winnerName = "(не найдена)";
         if (winner != null) {
-            winnerName = winner.getName();
+            winnerName = winner.name;
         }
         return winnerName;
     }

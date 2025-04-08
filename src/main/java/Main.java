@@ -1,12 +1,13 @@
 import java.util.Scanner;
 
 public class Main {
-    private final static int AUTOMOBILE_COUNT= 3;
+    private final static int AUTOMOBILE_COUNT = 3;
     private final static int MAX_SPEED = 250;
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        for (int i = 0; i < automobileCount; i++) {
+        Race race = new Race();
+        for (int i = 0; i < AUTOMOBILE_COUNT; i++) {
             String name;
             int speed;
             do {
@@ -19,10 +20,10 @@ public class Main {
                 speed = parseSpeed(scanner.nextLine().trim());
             } while (speed == -1 || !validateAutomobileSpeed(speed));
             Automobile automobile = new Automobile(name, speed);
-            Race.CheckWinner(automobile);
+            race.checkWinner(automobile);
         }
         scanner.close();
-        System.out.printf("— Самая быстрая машина: %s\n", Race.GetWinnerName());
+        System.out.printf("— Самая быстрая машина: %s\n", race.getWinnerName());
     }
 
     static int parseSpeed(String input) {
@@ -40,7 +41,7 @@ public class Main {
     }
 
     static boolean validateAutomobileSpeed(int speed) {
-        if (speed < 0 || speed > maxSpeed) {
+        if (speed < 0 || speed > MAX_SPEED) {
             System.out.println("— Неправильная скорость");
             return false;
         }

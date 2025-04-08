@@ -1,20 +1,11 @@
 public class Automobile {
-    private final String name;
+    public final String name;
     private final int speed;
-    private final int distance;
+    public final int distance;
 
     public Automobile(String name, int speed) {
         this.name = name;
         this.speed = speed;
-        this.distance = speed * Race.GetDuration();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getDistance()
-    {
-        return distance;
+        this.distance = speed * Race.DURATION;
     }
 }
