@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Main {
-    private final static int automobileCount = 3;
-    private final static int maxSpeed = 250;
+    private final static int AUTOMOBILE_COUNT= 3;
+    private final static int MAX_SPEED = 250;
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
